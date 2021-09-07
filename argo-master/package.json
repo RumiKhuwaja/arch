@@ -1,0 +1,41 @@
+{
+  "name": "argo-server",
+  "version": "1.0.0",
+  "description": "backend server for argo project",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "node start-client.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duncster94/argo-server.git"
+  },
+  "author": "Duncan Forster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duncster94/argo-server/issues"
+  },
+  "homepage": "https://github.com/duncster94/argo-server#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "argon2": "^0.25.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.4.1",
+    "mongoose": "^5.8.2"
+  },
+  "engines": {
+    "node": "10.13.0"
+  }
+}
